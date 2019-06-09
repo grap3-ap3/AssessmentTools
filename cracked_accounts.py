@@ -3,14 +3,14 @@ myPassDict = {}
 lstOfHashes = []
 lstForAnalysis = []
 
-with open(r'K:\Internal\TCL\Work\GLCU\23837_PenetrationTest-2019\nt-out.txt') as f:
+with open(r'/path/to/nt-out.txt') as f:
     for line in f:
         lstLine = line.split(':')
         myUser = lstLine[0]
         myHash = lstLine[3]
         myHashDict[myUser] = myHash
 
-with open(r'K:\Internal\TCL\Work\GLCU\23837_PenetrationTest-2019\captured_hashes.txt') as f:
+with open(r'/path/to/captured_hashes.txt') as f:
     for line in f:
         lstLine = line.split(':')
         myHash = lstLine[0]
@@ -31,5 +31,5 @@ for i in myHashDict.items():
     else:
         pass
 
-with open(r'K:\Internal\TCL\Work\GLCU\23837_PenetrationTest-2019\pwned.txt', mode='wt', encoding='utf-8') as myfile:
+with open(r'/path/to/pwned.txt', mode='wt', encoding='utf-8') as myfile:
     myfile.write('\n'.join(lstForAnalysis))
