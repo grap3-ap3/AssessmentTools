@@ -1,16 +1,20 @@
+myDitFile = input('Please enter the path to your extracted ntds.dit file: ')
+myPwnedFile = input('Please enter the path to your cracked accounts: ')
+myOutFile = input('Please enter the path to your output file: ')
+
 myHashDict = {}
 myPassDict = {}
 lstOfHashes = []
 lstForAnalysis = []
 
-with open(r'J:\Internal\TCL\Work\OptionCare\24288-PenTest2019\BioScrip\PW_Audit\BioScrip-extract.ntds') as f:
+with open(myDitFile) as f:
     for line in f:
         lstLine = line.split(':')
         myUser = lstLine[0]
         myHash = lstLine[3]
         myHashDict[myUser] = myHash
 
-with open(r'J:\Internal\TCL\Work\OptionCare\24288-PenTest2019\BioScrip\PW_Audit\BS-all_cracked.txt') as f:
+with open(myPwnedFile) as f:
     for line in f:
         lstLine = line.split(':')
         myHash = lstLine[0]
@@ -31,5 +35,5 @@ for i in myHashDict.items():
     else:
         pass
 
-with open(r'J:\Internal\TCL\Work\OptionCare\24288-PenTest2019\BioScrip\PW_Audit\pwned.txt', mode='wt', encoding='utf-8') as myfile:
+with open(myOutFile, mode='wt', encoding='utf-8') as myfile:
     myfile.write('\n'.join(lstForAnalysis))
