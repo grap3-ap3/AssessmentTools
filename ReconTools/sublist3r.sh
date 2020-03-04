@@ -5,8 +5,8 @@
 if [ $# == 2 ]; then
     for domain in `cat $1`
         do
-            echo "Now getting sublist3r record for: $host"
-            `python /pentest/intelligence-gathering/sublist3r/sublist3r.py -d $host -o $2`
+            echo "Now getting sublist3r record for: $domain"
+            `python /pentest/intelligence-gathering/sublist3r/sublist3r.py -d $domain -o ${2}_${domain}`
         done
 else
     echo "Illegal number of parameters"
