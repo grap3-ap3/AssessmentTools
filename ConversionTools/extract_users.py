@@ -1,7 +1,7 @@
 
 #myEmployeeFile = input('Please enter the path to your employee file: ')
-myEmployeeFile = r'J:\Internal\TCL\Work\osi\24339_PenetrationTest\data\external\LinkedIn_Employees.txt'
-myUserFile = r'J:\Internal\TCL\Work\osi\24339_PenetrationTest\data\external\userNames.txt'
+myEmployeeFile = r'J:\Internal\TCL\Work\WNC_FirstInsurance\24604_NetworkPenetrationTest-2020\data\external\recon\OSINT\EmployeesFromLinkedin.txt'
+myUserFile = r'J:\Internal\TCL\Work\WNC_FirstInsurance\24604_NetworkPenetrationTest-2020\data\external\recon\OSINT\userNames.txt'
 loop=True
 
 employeeList = [line.rstrip('\n') for line in open(myEmployeeFile)]
