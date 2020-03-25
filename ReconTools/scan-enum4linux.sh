@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Still in alfa. Need to install ldapsearch and test command.
 # Need to revise this to allow for iteration through a list? 
 
 if [ $# -eq 1 ]; then
