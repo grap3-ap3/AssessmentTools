@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 #
+# Tested and working 3/25/2020. Ready to roll to testing branch!
+#
 # Download all the data on Shodan for a list of IP addresses.
 # If the 3rd argument is provided ("[with history]") then the script will also download
 # historical information.
