@@ -1,6 +1,6 @@
 
-#myEmployeeFile = input('Please enter the path to your employee file: ')
-myEmployeeFile = r'J:\Internal\TCL\Work\WNC_FirstInsurance\24604_NetworkPenetrationTest-2020\data\external\recon\OSINT\EmployeesFromLinkedin.txt'
+myEmployeeFile = input('Please enter the path to your employee file: ')
+#myEmployeeFile = r'J:\Internal\TCL\Work\WNC_FirstInsurance\24604_NetworkPenetrationTest-2020\data\external\recon\OSINT\EmployeesFromLinkedin.txt'
 myUserFile = r'J:\Internal\TCL\Work\WNC_FirstInsurance\24604_NetworkPenetrationTest-2020\data\external\recon\OSINT\userNames.txt'
 loop=True
 
