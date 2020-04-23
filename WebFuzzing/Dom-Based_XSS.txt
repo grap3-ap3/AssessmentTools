@@ -1,0 +1,2 @@
+<iframe src="javascript:alert(`xss`)">
+<iframe%20src="javascript:alert(`xss`)">
