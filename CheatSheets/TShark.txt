@@ -1,0 +1,47 @@
+TShark Cheat Sheet
+
+Version: ​tshark -v
+List Interfaces: ​tshark -D
+Sniff eth0: ​tshark -i eth0
+Read file: tshark -r HTTP_traffic.pcap
+Read file, count lines: tshark -r HTTP_traffic.pcap | wc –l
+Print first 100 HTTP Packets from file: ​tshark -r HTTP_traffic.pcap -c 100
+Print list of protocols from file: ​tshark -r HTTP_traffic.pcap -z io,phs –q
+Filter ONLY HTTP traffic from file: tshark -Y ‘http’ -r HTTP_traffic.pcap
+Filter ONLY SSL traffic from file: : tshark -Y ‘ssl’ -r HTTPS_traffic.pcap
+Filter specify source and destination IPs: tshark -r HTTP_traffic.pcap -Y "ip.src==192.168.252.128 && ip.dst==52.32.74.91"
+Filter specify request method type: ​tshark -r HTTP_traffic.pcap -Y "http.request.method==GET"
+Print source IP, URL for all GET requests in file: tshark -r HTTP_traffic.pcap -Y "http.request.method==GET" -Tfields -e frame.time -e ip.src -e http.request.full_uri
+Print HTTP packets which contain string: tshark -r HTTP_traffic.pcap -Y "http contains password”
+Print destination IP(s) for GET requests sent to source: ​tshark -r HTTP_traffic.pcap -Y "http.request.method==GET && http.host==www.nytimes.com" -Tfields -e ip.dst
+Print IP, cookie for all packets in file Filter source and destination: tshark -r HTTP_traffic.pcap -Y "ip contains amazon.in && ip.src==192.168.252.128" -Tfields -e ip.src -e http.cookie
+Print useragent of source IP HTTP requests: ​tshark -r HTTP_traffic.pcap -Y "ip.src==192.168.252.128 && http" -Tfields -e http.user_agent
+Print source, destination IPs of all SSL handshake packets in file: tshark -r HTTPS_traffic.pcap -Y "ssl.handshake" -Tfields -e ip.src -e ip.dst
+Print issuer name for all SSL Certificates in file:  tshark -r HTTPS_traffic.pcap -Y "ssl.handshake.certificate" -Tfields -e
+x509sat.printableString
+Print IP address of all SSL destination IP addresses in file:  tshark -r HTTPS_traffic.pcap -Y "ssl && ssl.handshake.type==1" -Tfields -e ip.dst
+Print IP Addresses associated with domain:  tshark -r HTTPS_traffic.pcap -Y "ip contains askubuntu"
+Print source IP of packets who interacted with domain's IP addresses: tshark -r HTTPS_traffic.pcap -Y "ip.dst==151.101.1.69 || ip.dst==151.101.193.69 || ip.dst==151.101.129.69 || ip.dst==151.101.65.69" -Tfields -e ip.src
+Print DNS servers used by clients for resolution: tshark -r HTTPS_traffic.pcap -Y "dns && dns.flags.response==0" -Tfields -e ip.dst
+Print IP address of clients phoning to avast:  tshark -r HTTPS_traffic.pcap -Y "ip contains avast" -Tfields -e ip.src
+Print WiFi packets: tshark -r WiFi_traffic.pcap -Y "wlan"
+Print deauthentication packets: tshark -r WiFi_traffic.pcap -Y "wlan.fc.type_subtype==0x000c"
+Print WPA handshakes:  tshark -r WiFi_traffic.pcap -Y "eapol"
+Print ONLY SSID and BSSID of beacon frames in file: tshark -r WiFi_traffic.pcap -Y "wlan.fc.type_subtype==8" -Tfields -e wlan.ssid -e wlan.bssid
+Print BSSID of specific SSID: : tshark -r WiFi_traffic.pcap -Y "wlan.ssid==LazyArtists" -Tfields -e wlan.bssid
+Print channel of specific SSID:  tshark -r WiFi_traffic.pcap -Y "wlan.ssid==Home_Network" -Tfields -e wlan_radio.channel
+Print MAC address of clients who've received deauth packets:  tshark -r WiFi_traffic.pcap -Y "wlan.fc.type_subtype==0x000c" -Tfields -e wlan.ra
+Print user-agent for specific MAC address: tshark -r WiFi_traffic.pcap -Y "wlan.ta==5c:51:88:31:a0:3b && http" -Tfields -e http.user_agent
+Show ONLY VOIP traffic in file: tshark -r VoIP_traffic.pcap -Y "sip or rtp"
+Print all REGISTER packets in file: tshark -r VoIP_traffic.pcap -Y "sip.Method==REGISTER"
+Print source IP, sender extension, and authorization digest response for all REGISTER packets in file: tshark -r VoIP_traffic.pcap -Y "sip.Method==REGISTER" -Tfields -e ip.src -e sip.from.user -e sip.auth.digest.response
+Print all codecs being used by RTP in file: tshark -r VoIP_traffic.pcap -Y "sdp" -Tfields -e sdp.media
+Print source IP of Zopier client: tshark -r VoIP_traffic.pcap -Y "sip contains Zoiper" -Tfields -e ip.src
+Print destination IP of server used to place calls: tshark -r VoIP_traffic.pcap -Y "sip.Method==REGISTER" -Tfields -e ip.dst
+Print content of MESSAGE packets in file:  tshark -r VoIP_traffic.pcap -Y "sip.Method == MESSAGE" -V
+Print sender and receiver of BYTE method packets (successful calls): tshark -r VoIP_traffic.pcap -Y "sip.Method==BYE" -Tfields -e sip.from.user -e sip.to.user
+Write first 10 packets of file to new file:  tshark -r HTTP_traffic.pcap -Y http -c 189 -w First10.pcap
+Verbose output of file: tshark -r First10.pcap -V
+Export file to PDML format: tshark -r First10.pcap -T pdml > http.xml
+Print unique list of SSIDs for all APs in file: tshark -r WiFi_traffic.pcap -Y 'wlan.fc.type_subtype == 0x0008 && !(wlan.tag.length==0)' -T fields -e wlan.ssid | sort -u
+Print POST data, sent to domain: tshark -r HTTP_traffic.pcap -Y 'ip contains amazon.in && http.request.method == POST' -T fields -e text
